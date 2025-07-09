@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneImageScreen 
+		doneAction="http://10.1.0.105/menu.php" 
+		Beep="yes"
+		Timeout="60" 
+		LockIn="yes"
+		mode="regular"
+        refresh="15" url="http://user1:1234@10.200.108.89/yealink/daily/V84-basic_config_resource/xmlmuban/ImageScreen.xml">
+		
+		<Image verticalAlign="middle" horizontalAlign="middle"  >http://10.3.5.5:9/aa.jpg</Image>
+		
+	<!--	
+	T46/T48 Support:<Image verticalAlign="middle" horizontalAlign="middle"  >http://10.3.5.5:9/aa.jpg</Image>
+	
+	Other Phone Support:<Image verticalAlign="bottom" horizontalAlign="middle" height="12" width="8">00555500005555000000000000aaaa0000aaaa0000ffff0000ffff0000ffff00fffffffff0ffff0f00ffff0000f00f00</Image>
+  -->
+</YealinkIPPhoneImageScreen>

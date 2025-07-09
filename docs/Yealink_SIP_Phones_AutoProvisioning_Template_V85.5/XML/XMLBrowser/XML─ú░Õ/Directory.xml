@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneDirectory 
+		defaultIndex="1"
+		next="http://10.3.5.5:9/xmlBrowser/TestExecute.xml" 
+		previous="http://10.3.5.5:9/xmlBrowser/Testmenu.xml" 
+		Beep="yes" 
+		cancelAction="http://10.3.5.5:9/xmlBrowser/Testmenu.xml" 
+		Timeout="50" 
+		LockIn="no">
+		
+	
+
+	
+	<MenuItem> 
+		<Prompt>John</Prompt>
+		<URI>2510</URI>
+	</MenuItem>
+
+	<MenuItem>
+		<Prompt>Doe</Prompt>
+		<URI>4326</URI>
+	</MenuItem>
+
+	<MenuItem>
+		<Prompt>Wayne</Prompt>
+		<URI>9982691234</URI>
+	</MenuItem>
+
+
+
+<!--
+	<SoftKey index="1">
+		<Label>Dial</Label>
+		<URI>SoftKey:Dial</URI>
+	</SoftKey>
+
+	<SoftKey index="4">
+		<Label>exit</Label>
+		<URI>SoftKey:Exit</URI>
+	</SoftKey>
+-->
+</YealinkIPPhoneDirectory>

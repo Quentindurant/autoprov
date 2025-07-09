@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<Dialing>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="History" />
+		<Key Type="Line" />
+		<Key Type="Directories" />
+		<Key Type="End Call"/>
+		<Key Type="Call Pull"/>
+		<Key Type="Extend" />		
+	</Disable>
+	<Enable>
+		<Key Type="Send" />
+		<Key Type="IME" />
+		<Key Type="Delete" />
+		<Key Type="Cancel" />
+	</Enable>
+	<Default>
+		<Key Type="Send" />
+		<Key Type="IME" />
+		<Key Type="Delete" />
+		<Key Type="Cancel" />
+	</Default>
+</Dialing>
+<DialingEmpty>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="History" />
+		<Key Type="Line" />
+		<Key Type="GPickup" />
+		<Key Type="DPickup" />
+		<Key Type="Retrieve" />
+        <Key Type="Intercom"/>
+        <Key Type="Call Pull"/>
+	<Key Type="Extend" />	        
+	</Disable>
+	<Enable>
+		<Key Type="Directories" />
+		<Key Type="IME" />
+		<Key Type="Empty" />
+		<Key Type="Cancel" />
+	</Enable>
+	<Default>
+		<Key Type="Directories" />
+		<Key Type="IME" />
+		<Key Type="Empty" />
+		<Key Type="Cancel" />
+	</Default>
+</DialingEmpty>
+<DialConference>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="History" />
+		<Key Type="Directories" />
+		<Key Type="Extend" />
+    </Disable>
+	<Enable>
+		<Key Type="Send" />
+		<Key Type="IME" />
+		<Key Type="Delete" />
+		<Key Type="Cancel" />
+	</Enable>
+	<Default>
+		<Key Type="Send" />
+		<Key Type="IME" />
+		<Key Type="Delete" />
+		<Key Type="Cancel" />
+	</Default>
+</DialConference>
+<DialConferenceEmpty>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="History" />
+        <Key Type="Intercom"/>
+	<Key Type="Extend" />	
+	</Disable>
+	<Enable>
+		<Key Type="Directories" />
+		<Key Type="IME" />
+		<Key Type="Empty" />
+		<Key Type="Cancel" />
+	</Enable>
+	<Default>
+		<Key Type="Directories" />
+		<Key Type="IME" />
+		<Key Type="Empty" />
+		<Key Type="Cancel" />
+	</Default>
+</DialConferenceEmpty>
+<DialTrans>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="History" />
+		<Key Type="Directories" />
+		<Key Type="IME" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="B Transfer" />
+		<Key Type="Send" />
+		<Key Type="Delete" />
+		<Key Type="Cancel" />
+	</Enable>
+	<Default>
+		<Key Type="B Transfer" />
+		<Key Type="Send" />
+		<Key Type="Delete" />
+		<Key Type="Cancel" />
+	</Default>
+</DialTrans>
+<DialTransEmpty>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="History" />
+        <Key Type="Intercom"/>
+	<Key Type="Extend" />	
+	</Disable>
+	<Enable>
+		<Key Type="Directories" />
+		<Key Type="IME" />
+		<Key Type="Empty" />
+		<Key Type="Cancel" />
+	</Enable>
+	<Default>
+		<Key Type="Directories" />
+		<Key Type="IME" />
+		<Key Type="Empty" />
+		<Key Type="Cancel" />
+	</Default>
+</DialTransEmpty>
+

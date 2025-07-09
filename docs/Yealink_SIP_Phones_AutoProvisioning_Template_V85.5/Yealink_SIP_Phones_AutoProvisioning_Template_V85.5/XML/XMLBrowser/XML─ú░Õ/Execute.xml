@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneExecute 
+		Beep="yes">
+		
+		<ExecuteItem URI="Dial:12345" />
+		
+		<ExecuteItem URI="Led:LINE1=on"/>
+		<ExecuteItem URI="Led:LINE2=off"/>	
+		
+
+</YealinkIPPhoneExecute>

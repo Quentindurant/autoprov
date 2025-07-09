@@ -1,0 +1,24 @@
+NOTIFY sip:303@192.168.168.75:5063 SIP/2.0
+From: "303"<sip:303@192.168.168.200>;tag=41e83658-c0a8a8c8-13c4-50022-1a1b1-17e4bacd-1a1b1
+To: "303"<sip:303@192.168.168.200>;tag=593303487
+Call-ID: 33220088@192.168.168.75
+CSeq: 2 NOTIFY
+Via: SIP/2.0/UDP 192.168.168.200:5060;rport;branch=z9hG4bK-1a22f-6618b71-5c4a8ac7
+Subscription-State: active
+Event: aastra-xml
+Max-Forwards: 70
+Supported: replaces,timer
+Contact: <sip:303@192.168.168.200>
+Content-Type: application/xml
+Content-Length: 107 
+
+<YealinkIPPhoneExecute>
+<ExecuteItem URI="http://10.3.5.5:9/xmlBrowser/Testmenu.xml"/>
+</YealinkIPPhoneExecute>
+
+
+*************************************************************
+
+content-length为 66 + URI的字符长度 
+
+*************************************************************

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneTextMenu 
+		defaultIndex="15" 
+		style="numbered" 
+		Beep="yes" 
+		wrapList="yes" 
+		Timeout="0" 
+		cancelAction="http://10.3.5.5:9/xmlBrowser/TestInput.xml" 
+		previous="http://10.3.5.5:9/xmlBrowser/Testmenu.xml" 
+		LockIn="no">
+		
+<Title>TextMenu</Title>
+
+<MenuItem>
+<Prompt>Input11111111111111111111111111111111111111111111111111111111111111222222222</Prompt>
+<Prompt>Input</Prompt>
+<URI>http://10.3.5.5/TestStatus.xml</URI>
+<Dial>220</Dial>
+<Selection>0&amp;menu_pos=1</Selection>
+</MenuItem>
+
+<MenuItem>
+<Prompt>FormatText</Prompt>
+<URI>http://10.3.3.4:9/update/xmlBrowser/TestFormattedText.xml</URI>
+<Dial>220</Dial>
+<Selection></Selection>
+</MenuItem>
+
+<MenuItem>
+<Prompt>Directory</Prompt>
+<URI>http://10.3.3.4:9/update/xmlBrowser/TestDirectory.xml</URI>
+<Dial>220</Dial>
+<Selection></Selection>
+</MenuItem>
+
+<MenuItem>
+<Prompt>ImageScreen</Prompt>
+<URI>http://10.3.3.4:9/update/xmlBrowser/TestImage.xml</URI>
+<Dial>220</Dial>
+<Selection></Selection>
+</MenuItem>
+
+<MenuItem>
+<Prompt>TextScreen</Prompt>
+<URI>http://10.3.3.4:9/update/xmlBrowser/TextScreen.xml</URI>
+<Dial>227</Dial>
+<Selection></Selection>
+</MenuItem>
+
+<MenuItem>
+<Prompt>StatusScreen</Prompt>
+<URI>http://10.3.3.4:9/update/xmlBrowser/TestStatus.xml</URI>
+<Dial>228</Dial>
+<Selection></Selection>
+</MenuItem>
+
+<MenuItem>
+<Prompt>Config</Prompt>
+<URI>http://10.3.3.4:9/update/xmlBrowser/TestConfig.xml</URI>
+<Dial>229</Dial>
+<Selection></Selection>
+</MenuItem>
+
+<MenuItem>
+<Prompt>Execute</Prompt>
+<URI>http://10.3.3.4:9/update/xmlBrowser/TestExecute.xml</URI>
+<Dial>230</Dial>
+<Selection></Selection>
+</MenuItem>
+
+
+
+</YealinkIPPhoneTextMenu>

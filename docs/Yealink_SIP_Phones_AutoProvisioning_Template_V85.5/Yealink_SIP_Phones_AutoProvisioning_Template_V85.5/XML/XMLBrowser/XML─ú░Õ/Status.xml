@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneStatus
+		Beep="yes"
+		SessionID="125"
+		Timeout="600">
+    
+		<Message Align="left" Color="red" Account="1234@10.2.1.199" Icon="Note">Open DND</Message>
+		<Message Align="left" Color="white" Icon="Forward" >Foward to 321</Message>
+		<Message Size="normal" Align="left" Color="blue" Icon="Forward" Account="333@10.2.1.199">Foward to 654</Message>
+		
+		<!--
+		Color Attribute is only T46/T48 Support!
+		<Message Align="left" Color="white" Icon="Forward" >Foward to 321</Message>
+		<Message Align="right" Color="blue" Icon="Forward" Account="344@10.2.1.199">Foward to 987</Message>
+		<Message Align="left" Color="blue" Icon="Forward" Account="333@10.2.1.199">Foward to 654</Message>
+		<Message Size="normal" Align="left" Color="blue" Icon="Forward" Account="333@10.2.1.199">Foward to 654</Message>
+		
+		-->
+	
+</YealinkIPPhoneStatus>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneFormattedTextScreen  
+		doneAction="http://10.1.0.105/menu.php" 
+		Beep="yes"
+		Timeout="60" 
+		LockIn="no">
+
+		<Line Color="lightblue">Header line1</Line>
+		
+		<Scroll>
+				<Line Size="large" Align="center">Scroll line1</Line>
+				<Line Align="left" Color="red">Scroll line2</Line>
+				<Line Align="right" Color="green">Scroll line3</Line>
+		</Scroll>
+		
+		<Line Size="normal" Align="center" Color="white">Footer line1</Line>
+		
+		<!--
+		Color parameter only for T46 T48 model.
+		-->
+	
+</YealinkIPPhoneFormattedTextScreen>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Connecting>
+  <Disable>
+    <Key Type="Empty"/>
+    <Key Type="Switch"/>
+    <Key Type="Extend" />
+
+  </Disable>
+  <Enable>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="End Call"/>
+  </Enable>
+  <Default>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="End Call"/>
+  </Default>
+</Connecting>
+
+<SemiAttendTrans>
+  <Disable>
+    <Key Type="Empty"/>
+    <Key Type="Switch"/>
+	<Key Type="Extend" />
+  </Disable>
+  <Enable>
+    <Key Type="Transfer"/>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="End Call"/>
+  </Enable>
+  <Default>
+    <Key Type="Transfer"/>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="End Call"/>
+  </Default>
+</SemiAttendTrans>

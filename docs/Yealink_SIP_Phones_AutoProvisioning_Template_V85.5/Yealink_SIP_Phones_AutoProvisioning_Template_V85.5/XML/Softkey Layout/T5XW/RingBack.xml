@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<RingBack>
+  <Disable>
+    <Key Type="Empty"/>
+    <Key Type="Switch"/>
+    <Key Type="End Call"/>
+	<Key Type="Extend" />
+  </Disable>
+  <Enable>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="Cancel"/>
+  </Enable>
+  <Default>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="Cancel"/>
+  </Default>
+</RingBack>
+
+<SemiAttendTransBack>
+  <Disable>
+    <Key Type="Empty"/>
+    <Key Type="Switch"/>
+    <Key Type="End Call"/>
+	<Key Type="Extend" />
+  </Disable>
+  <Enable>
+    <Key Type="Transfer"/>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="Cancel"/>
+  </Enable>
+  <Default>
+    <Key Type="Transfer"/>
+    <Key Type="Empty"/>
+    <Key Type="Empty"/>
+    <Key Type="Cancel"/>
+  </Default>
+</SemiAttendTransBack>

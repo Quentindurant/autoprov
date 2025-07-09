@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<KeyboardLayout>
+		
+<!--
+
+<Line LeftIndent="" TopIndent="" Width="" Height=""></Line>
+<Key LeftIndent="" TopIndent="" Width="" Height=""></Key>
+
+Line½ÚµãÖÐµÄÊôÐÔÖµ´ú±í¸ÃÐÐKey½ÚµãÖÐµÄÄ¬ÈÏÊôÐÔÖµ£¬±¾Éí²»»á±»Ê¹ÓÃµ½
+Èç¹ûKey½ÚµãÖÐ²»Ð´¶ÔÓ¦ÊôÐÔÖµ£¬Ôò±íÊ¾¸ÃKeyµÄÊôÐÔÖµÊ¹ÓÃLineÖÐ¶¨ÒåµÄÄ¬ÈÏÊôÐÔÖµ
+
+LeftIndent±íÊ¾µ±°´Å¥Àë×ó²à±ß»òÇ°Ò»¸ö°´Å¥µÄ¾àÀë
+TopIndent±íÊ¾µ±Ç°ÐÐÀë¶¥¶Ë»òÀëÉÏÒ»ÐÐµÄ¾àÀë
+
+-->
+
+	<Line LeftIndent="2" TopIndent="6" Width="64" Height="58" >		
+		<Key LeftIndent="5"></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key Width="130"></Key>
+	</Line>
+
+	
+	<Line LeftIndent="2" TopIndent="4" Width="64" Height="58">
+		<Key LeftIndent="27"></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		
+		<Key Width="108">
+		</Key>
+	</Line>
+	
+	<Line LeftIndent="2" TopIndent="4" Width="64" Height="58">
+		<Key LeftIndent="5"></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+		<Key></Key>
+	</Line>
+	
+	<Line LeftIndent="2" TopIndent="4" Width="64" Height="58">
+		<Key LeftIndent="5" Width="130"></Key>
+		<Key></Key>
+		
+		<Key Width="328"></Key>
+		
+		<Key></Key>
+		<Key></Key>
+
+		<Key Width="130"></Key>
+	</Line>
+
+</KeyboardLayout>

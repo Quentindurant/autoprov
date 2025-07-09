@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<Talk>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Mute" />
+		<Key Type="SWAP" />
+		<Key Type="NewCall" />
+		<Key Type="Switch" />
+		<Key Type="PriHold" />
+		<Key Type="Park" />
+		<Key Type="GPark" />
+		<Key Type="RTP Status" />
+		<Key Type="Security" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="Transfer" />
+		<Key Type="Hold" />
+		<Key Type="Conference" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Transfer" />
+		<Key Type="Hold" />
+		<Key Type="Conference" />
+		<Key Type="End Call" />
+	</Default>
+</Talk>
+<Hold>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Switch" />
+		<Key Type="Park" />
+		<Key Type="GPark" />
+		<Key Type="Security" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="Transfer" />
+		<Key Type="Resume" />
+		<Key Type="NewCall" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Transfer" />
+		<Key Type="Resume" />
+		<Key Type="NewCall" />
+		<Key Type="End Call" />
+	</Default>
+</Hold>
+<Held>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Switch" />
+		<Key Type="NewCall" />
+		<Key Type="Park" />
+		<Key Type="GPark" />
+		<Key Type="Security" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="Transfer" />
+		<Key Type="Hold" />
+		<Key Type="Conference" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Transfer" />
+		<Key Type="Hold" />
+		<Key Type="Conference" />
+		<Key Type="End Call" />
+	</Default>
+</Held>
+<Conferenced>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Switch" />
+		<Key Type="Mute" />
+		<Key Type="RTP Status" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+	    <Key Type="Split" />
+		<Key Type="Hold" />
+		<Key Type="Manager" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Split" />
+		<Key Type="Hold" />
+		<Key Type="Manager" />
+		<Key Type="End Call" />
+	</Default>
+</Conferenced>
+<ConferencedHold>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Switch" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="Split" />	
+		<Key Type="Resume" />
+		<Key Type="NewCall" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Split" />
+		<Key Type="Resume" />
+		<Key Type="NewCall" />
+		<Key Type="End Call" />
+	</Default>
+</ConferencedHold>
+<NewCallIn>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Switch" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="Transfer" />
+		<Key Type="Answer" />
+		<Key Type="Reject" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Transfer" />
+		<Key Type="Answer" />
+		<Key Type="Reject" />
+		<Key Type="End Call" />
+	</Default>
+</NewCallIn>
+<ConferencedNewCallIn>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Switch" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="Empty" />
+		<Key Type="Answer" />
+		<Key Type="Reject" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Empty" />
+		<Key Type="Answer" />
+		<Key Type="Reject" />
+		<Key Type="End Call" />
+	</Default>
+</ConferencedNewCallIn>
+<Paging>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="Empty" />
+		<Key Type="Hold" />
+		<Key Type="Empty" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Empty" />
+		<Key Type="Hold" />
+		<Key Type="Empty" />
+		<Key Type="End Call" />
+	</Default>
+</Paging>
+<ListeningPaging>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="Empty" />
+		<Key Type="Hold" />
+		<Key Type="Empty" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Empty" />
+		<Key Type="Hold" />
+		<Key Type="Empty" />
+		<Key Type="End Call" />
+	</Default>
+</ListeningPaging>
+<BeTransferred>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="Switch" />
+		<Key Type="NewCall" />
+		<Key Type="Extend" />
+	</Disable>
+	<Enable>
+		<Key Type="Empty" />
+		<Key Type="Hold" />
+		<Key Type="Empty" />
+		<Key Type="End Call" />
+	</Enable>
+	<Default>
+		<Key Type="Empty" />
+		<Key Type="Hold" />
+		<Key Type="Empty" />
+		<Key Type="End Call" />
+	</Default>
+</BeTransferred>

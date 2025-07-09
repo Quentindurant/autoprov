@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneInputScreen 
+		type="string" 
+		Beep="yes" 
+		Password="no" 
+		Timeout="0"
+		LockIn="no" 
+		inputLanguage="German"
+		cancelAction="http://10.3.5.5:9/xmlBrowser/Testmenu.xml" 
+		displayMode = "condensed"  
+		defaultIndex="3" >
+		<!-- displayMode parameter only for T46 T48 T28 model. -->
+
+	<Title>Input Info</Title>
+	
+	<URL>http://10.3.5.5/</URL>
+	
+	<InputField type="number" password="no" editable="yes">
+		<Prompt>User ID:</Prompt>
+		<Parameter>userid</Parameter>
+		<Selection>1QQQQ</Selection>
+		<Default>21501</Default>
+		
+	</InputField>
+	
+	<InputField type="IP" password="no" editable="no">
+		<Prompt>IP Address:</Prompt>
+		<Parameter>IP</Parameter>
+		<Selection>2</Selection>
+		<Default>192.168.0.138</Default>
+	</InputField>
+	
+	<InputField type="string" password="no" editable="yes">
+		<Prompt>Name:</Prompt>
+		<Parameter>user</Parameter>
+		<Selection>5QQQQ</Selection>
+		<Default>jxz</Default>
+	</InputField>
+	
+	<InputField type="string" password="yes" editable="yes">
+		<Prompt>password:</Prompt>
+		<Parameter>passwd</Parameter>
+		<Selection>4</Selection>
+		<Default>123456</Default>
+	</InputField>
+
+	
+</YealinkIPPhoneInputScreen>

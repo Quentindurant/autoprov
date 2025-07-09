@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneCustomScreenSaver
+	LineSpacing = "3"  						
+	InsertImageLineNum = "5"	>		
+
+<SystemTime Size="Large" horizontalAlign="right" verticalAlign="top" Color="black">show</SystemTime>
+
+
+<StatusIcons
+horizontalAlign="middle"
+verticalAlign="top">show</StatusIcons>
+
+<Line Size="large" Align="center" Color="blue">123</Line> 
+<Line Size="small" Align="center" Color="RGB(100,100,50)" ></Line> 
+<Line Size="large" Align="right" Color="RGB(150,120,100)">123</Line>
+<Line Size="small" Align="left" Color="white">123</Line>
+
+
+<Image 
+horizontalAlign="middle" 
+verticalAlign="middle"  height="80" width="100">http://IP/hello.bmp</Image> 
+
+
+</YealinkIPPhoneCustomScreenSaver>

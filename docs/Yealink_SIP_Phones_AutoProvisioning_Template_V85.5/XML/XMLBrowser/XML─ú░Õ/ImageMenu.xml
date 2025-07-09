@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneImageMenu 
+        Beep = "no"
+		Timeout="120" 
+		mode="regular"
+		doneAction="http://10.3.5.5/xxx.xml"
+		LockIn="no">
+
+		<Image verticalAlign="bottom" horizontalAlign="middle" >http://10.3.5.5:9/400_240.JPG</Image>
+		
+		<!--
+		<Image verticalAlign="bottom" horizontalAlign="middle" >http://10.3.5.5:9/400_240.JPG</Image>
+		<Image verticalAlign="bottom" horizontalAlign="middle" height="12" width="8">00555500005555000000000000aaaa0000aaaa0000ffff0000ffff0000ffff00fffffffff0ffff0f00ffff0000f00f00</Image>
+		-->
+
+		<URIList base="http://10.3.5.5:9/xmlBrowser/">
+		<URI key="#">http://10.3.5.5:9/xmlBrowser/TestInput.xml</URI>
+		<URI key="*">http://10.3.5.5:9/xmlBrowser/TestInput.xml</URI>
+		<URI key="0">TextScreen.xml</URI>
+		<URI key="1"></URI>
+		</URIList>
+
+
+
+</YealinkIPPhoneImageMenu>

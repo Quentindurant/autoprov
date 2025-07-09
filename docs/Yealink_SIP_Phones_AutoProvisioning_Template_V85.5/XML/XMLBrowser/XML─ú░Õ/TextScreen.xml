@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YealinkIPPhoneTextScreen 
+		Beep="yes" 
+		doneAction="http://10.3.5.5:9/xmlBrowser/TestInput.xml" 
+		wrapList="yes"
+		Timeout="0" 
+		cancelAction="http://10.3.5.5:9/xmlBrowser/Testmenu.xml" 
+		LockIn="no">
+
+<Title>TextScreen</Title>
+
+<Text>Yealink T-38 Xml Browser Formation process of 18th CPC National Congress 
+	-38 Xml Browser Formation process of 18th CPC National Congress -38 Xml Browser Formation process of 18th CPC National Congress 
+
+
+</Text>
+
+</YealinkIPPhoneTextScreen>
+

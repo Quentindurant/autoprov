@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<CallFailed>
+	<Disable>
+		<Key Type="Empty" />
+		<Key Type="End Call" />
+		<Key Type="Extend" />		
+	</Disable>
+	<Enable>
+		<Key Type="NewCall" />
+		<Key Type="Empty" />
+		<Key Type="Empty" />
+		<Key Type="Cancel" />
+	</Enable>
+	<Default>
+		<Key Type="NewCall" />
+		<Key Type="Empty" />
+		<Key Type="Empty" />
+		<Key Type="Cancel" />
+	</Default>
+</CallFailed>

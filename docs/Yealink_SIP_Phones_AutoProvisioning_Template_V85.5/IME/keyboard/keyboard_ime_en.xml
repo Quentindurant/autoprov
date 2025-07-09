@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<KeyboardIme Layout="keyboard_layout_1.xml" DisplayName="abc" CapitalName="ABC" ImeType="Char">
+
+<!--
+<KeyboardImeNormal Layout="keyboard_layout_1.xml" DisplayName="Eng" ImeType="Char"/"Symbol">
+Èç¹ûImeTypeÌîÐ´SymbolÔòShift²»Æð×÷ÓÃ£¬Èç¹ûÏë·ÅºÜ¶àÌØÊâ·ûºÅÓ¦ÁíÆðÒ»¸öimeÎÄ¼þ
+
+<Key Display="" Function="" ImeNormal="" ImeCapital=""></Key>
+
+Display±íÊ¾×îÖÕµÄÏÔÊ¾ÄÚÈÝ£¬ºÍÊäÈëÄÚÈÝÎÞ¹Ø
+Èç¹û²»Ð´µÄ»°¾Í»áÊ¹ÓÃImeNormal»òImeCapitalµÄµÚÒ»¸ö±¸Ñ¡×Ö·û
+
+Function
+{
+backspace		ÍË¸ñ
+space				¿Õ¸ñ
+enter				»Ø³µ
+left					×ó·½Ïò¼ü
+right					ÓÒ·½Ïò¼ü
+up					ÉÏ·½Ïò¼ü
+down				ÏÂ·½Ïò¼ü
+hide					Òþ²Ø¼üÅÌ
+
+shift					ÇÐ»»´óÐ¡Ð´
+lang					ÇÐ»»ÓïÑÔ
+switch				ÇÐ»»ÓïÑÔÄÚµÄÊäÈë·¨
+}
+
+°´Å¥µÄ±³¾°ÑÕÉ«½«¸ù¾Ý¹¦ÄÜ¼üÀ´ÉèÖÃ£¬ÀýÈçÍË¸ñ¼üµÄ±³¾°ÊÇÉîÉ«£¬·½Ïò¼üÊÇÇ³É«£¬ImeNormal¼üÊÇÇ³É«
+
+Èç¹ûKey½ÚµãÖÐ¼ÈÓÐFunctionÊôÐÔÓÖÓÐImeNormal»òImeCapital£¬ÔòÒÔFunctionÓÅÏÈ
+
+Èç¹ûÕû¸ö²¼¾ÖÖÐÍ¬Ê±´æÔÚImeNormalºÍImeCapitalµÄÖµ£¬µ«ÊÇÓÐµÄKeyÈ±ÉÙÆäÖÐÒ»¸ö£¬ÔòÃ»Ð´µÄÄÇ¸öÓÃÒ»¸ö¿ÕÎ»Ìî³ä
+
+³ýÁËÓïÑÔ¡¢ÊäÈë·¨ÇÐ»»¼ü£¬ÆäËû¹¦ÄÜ¼ü²»Ö§³Ö³¤°´µ¯±¸Ñ¡¿ò
+
+-->
+
+
+	<Line>
+		<Key ImeNormal="q" ImeCapital="Q"></Key>
+		<Key ImeNormal="w" ImeCapital="W"></Key>
+		<Key ImeNormal="e" ImeCapital="E"></Key>
+		<Key ImeNormal="r" ImeCapital="R"></Key>
+		<Key ImeNormal="t" ImeCapital="T"></Key>
+		<Key ImeNormal="y" ImeCapital="Y"></Key>
+		<Key ImeNormal="u" ImeCapital="U"></Key>
+		<Key ImeNormal="i" ImeCapital="I"></Key>
+		<Key ImeNormal="o" ImeCapital="O"></Key>
+		<Key ImeNormal="p" ImeCapital="P"></Key>
+		
+		<Key Function="backspace"></Key>
+	</Line>
+	
+
+	<Line>
+		<Key ImeNormal="a" ImeCapital="A"></Key>
+		<Key ImeNormal="s" ImeCapital="S"></Key>
+		<Key ImeNormal="d" ImeCapital="D"></Key>
+		<Key ImeNormal="f" ImeCapital="F"></Key>
+		<Key ImeNormal="g" ImeCapital="G"></Key>
+		<Key ImeNormal="h" ImeCapital="H"></Key>
+		<Key ImeNormal="j" ImeCapital="J"></Key>
+		<Key ImeNormal="k" ImeCapital="K"></Key>
+		<Key ImeNormal="l" ImeCapital="L"></Key>
+		<Key ImeNormal="&apos;" ImeCapital="&quot;"></Key> 	<!-- ·ûºÅ ' ºÍ "  -->
+		
+		<Key Function="enter"></Key>
+	</Line>
+	
+	<Line>
+		<Key Function="shift"></Key>
+		
+		<Key ImeNormal="z" ImeCapital="Z"></Key>
+		<Key ImeNormal="x" ImeCapital="X"></Key>
+		<Key ImeNormal="c" ImeCapital="C"></Key>
+		<Key ImeNormal="v" ImeCapital="V"></Key>
+		<Key ImeNormal="b" ImeCapital="B"></Key>
+		<Key ImeNormal="n" ImeCapital="N"></Key>
+		<Key ImeNormal="m" ImeCapital="M"></Key>
+		<Key ImeNormal="," ImeCapital=";"></Key>
+		<Key ImeNormal="." ImeCapital=":"></Key>
+		<Key ImeNormal="@" ImeCapital="$"></Key>
+		
+		<Key Function="shift"></Key>
+	</Line>
+	
+	<Line>
+		<Key Function="switch"></Key>
+		<Key Function="lang"></Key>		
+		
+		<Key Function="space"></Key>
+		
+		<Key Function="left"></Key>
+		<Key Function="right"></Key>
+
+		<Key Function="hide"></Key>
+	</Line>
+	
+
+</KeyboardIme>

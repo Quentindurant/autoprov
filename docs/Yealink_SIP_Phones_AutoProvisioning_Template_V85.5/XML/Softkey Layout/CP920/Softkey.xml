@@ -1,0 +1,86 @@
+<Talking.xml>
+	<ConferencedNewCallIn>
+		<item FileName="Talking.xml" Status="Conferenced"/>
+	</ConferencedNewCallIn>
+	<ConferenceManager>
+		<item FileName="Talking.xml" Status="Conferenced"/>
+	</ConferenceManager>
+	<ConferencedHold>
+		<item FileName="Talking.xml" Status="Conferenced"/>
+	</ConferencedHold>
+	<NetworkConferencedHold>
+		<item FileName="Talking.xml" Status="Hold"/>
+	</NetworkConferencedHold>
+	<NetworkConferenced>
+		<item FileName="Talking.xml" Status="Talk"/>
+	</NetworkConferenced>
+	<NewCallIn>
+		<item FileName="Talking.xml" Status="Talk"/>
+	</NewCallIn>
+	<ListeningPaging>
+		<item FileName="Talking.xml" Status="Talk"/>
+	</ListeningPaging>
+	<ListeningPagingHold>
+		<item FileName="Talking.xml" Status="Hold"/>
+	</ListeningPagingHold>
+	<Paging>
+		<item FileName="Talking.xml" Status="Talk"/>
+	</Paging>
+	<PagingHold>
+		<item FileName="Talking.xml" Status="Hold"/>
+	</PagingHold>
+	<BeTransferred>
+		<item FileName="Talking.xml" Status="Held"/>
+	</BeTransferred>
+</Talking.xml>
+
+<Dialing.xml>
+	<DialTrans>
+		<item FileName="Talking.xml" Status="PreTrans"/>
+	</DialTrans>
+	<DialTransEmpty>
+		<item FileName="Talking.xml" Status="PreTrans"/>
+	</DialTransEmpty>
+	<DialConference>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialConference>
+	<DialConferenceEmpty>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialConferenceEmpty>
+	<DialDPickup>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialDPickup>
+	<DialDPickupEmpty>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialDPickupEmpty>
+	<DialRetrieve>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialRetrieve>
+	<DialRetrieveEmpty>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialRetrieveEmpty>
+	<DialingEmpty>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialingEmpty>
+	<DialForward>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialForward>
+	<DialForwardEmpty>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialForwardEmpty>
+	<DialCallPark>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialCallPark>
+	<DialCallParkEmpty>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialCallParkEmpty>
+	<DialGroupCallPark>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialGroupCallPark>
+	<DialGroupCallParkEmpty>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialGroupCallParkEmpty>
+	<DialOnHold>
+		<item FileName="Dialing.xml" Status="Dialing"/>
+	</DialOnHold>
+</Dialing.xml>

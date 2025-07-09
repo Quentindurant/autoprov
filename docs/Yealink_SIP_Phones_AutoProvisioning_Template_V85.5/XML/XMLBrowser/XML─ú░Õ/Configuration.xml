@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<YealinkIPPhoneConfiguration 	
+		Beep="yes" >
+	
+	<Item>account.1.enable = 1</Item>
+	<Item>account.1.label = 1400</Item>
+	<Item>account.1.display_name = 1400 </Item>
+	<Item>account.1.user_name = 1400</Item>
+	<Item>account.1.auth_name = 1400</Item>
+	<Item>account.1.sip_server.1.address = 10.2.1.199</Item>
+	
+	<Item>forward.always.enable = 1</Item>
+	<Item>forward.always.target = 2510</Item>
+
+</YealinkIPPhoneConfiguration>

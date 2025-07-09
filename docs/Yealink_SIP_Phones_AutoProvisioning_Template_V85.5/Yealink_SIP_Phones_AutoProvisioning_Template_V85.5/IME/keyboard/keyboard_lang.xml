@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<KeyboardLang>
+
+<!--
+-->
+
+	<Lang Name="English">
+		<Ime Name="keyboard_ime_en.xml"></Ime>
+		<Ime Name="keyboard_ime_num.xml"></Ime>
+	</Lang>
+	
+	<!--
+	<Lang Name="Francais">
+		<Ime Name="keyboard_ime_francais.xml"></Ime>
+		<Ime Name="keyboard_ime_num.xml"></Ime>
+	</Lang>
+-->
+	
+</KeyboardLang>
