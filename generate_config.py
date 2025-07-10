@@ -24,7 +24,7 @@ def generate_config(mac, username, extension, password, sip_server):
     # Génération du XML
     with open(filename, 'w', encoding='utf-8') as file:
         file.write(config_data)
-    print(f"Fichier {filename} généré avec succès ! (XML)")
+    print(f"Fichier {filename} généré avec succèsssss ! (XML)")
 
     # Génération du INI
     ini_content = f"""
