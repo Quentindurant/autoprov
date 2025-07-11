@@ -41,11 +41,11 @@ account.1.sip_server.1.address = {sip_server}
         file.write(ini_content)
     print(f"Fichier {ini_filename} généré avec succèsssssss YAAAAAAAAAAAAAAA! (INI)")
 
-# Exemple corrigé avec tes valeurs
-generate_config(
-    mac="44:DB:D2:E4:BE:98",
-    username="test",
-    extension="a2v5go2x",
-    password="obvtiwi5",
-    sip_server="141.94.251.137"
-)
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) == 6:
+        _, mac, username, extension, password, sip_server = sys.argv
+        generate_config(mac, username, extension, password, sip_server)
+    else:
+        print("Usage: python3 generate_config.py <mac> <username> <extension> <password> <sip_server>")
+

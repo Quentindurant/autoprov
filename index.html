@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoProvision Yealink - Générateur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f6f8fa; margin: 0; padding: 0; }
+        .container { max-width: 400px; margin: 40px auto; background: #fff; box-shadow: 0 0 10px #ccc; border-radius: 8px; padding: 32px; }
+        h2 { text-align: center; color: #263238; }
+        label { display: block; margin-top: 16px; color: #374151; }
+        input[type="text"], input[type="password"] {
+            width: 100%; padding: 8px 12px; margin-top: 4px; border: 1px solid #bbb; border-radius: 4px;
+        }
+        button { margin-top: 24px; width: 100%; padding: 12px; background: #1976d2; color: #fff; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #1565c0; }
+        .result { margin-top: 24px; background: #e3f2fd; padding: 12px; border-radius: 4px; color: #1976d2; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Générateur AutoProvision Yealink</h2>
+        <form id="provForm">
+            <label for="mac">MAC Address :</label>
+            <input type="text" id="mac" name="mac" maxlength="17" placeholder="44:DB:D2:E4:BE:98" required>
+
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="extension">Extension :</label>
+            <input type="text" id="extension" name="extension" required>
+
+            <label for="password">Mot de passe SIP :</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="sip_server">Serveur SIP :</label>
+            <input type="text" id="sip_server" name="sip_server" required>
+
+            <button type="submit">Générer les fichiers</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+    document.getElementById('provForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+            mac: form.mac.value,
+            username: form.username.value,
+            extension: form.extension.value,
+            password: form.password.value,
+            sip_server: form.sip_server.value
+        };
+        const res = await fetch('generate.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        const msg = await res.text();
+        document.getElementById('result').textContent = msg;
+    });
+    </script>
+</body>
+</html>
