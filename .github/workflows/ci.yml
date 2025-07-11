@@ -30,6 +30,10 @@ jobs:
               sudo pip3 install jinja2
             fi
 
+            # (NOUVEAU) Donne l'accès en écriture au user courant
+            sudo chown -R $USER:$USER .
+
             python3 generate_config.py
 
+            # Remet les droits à www-data pour le serveur web
             sudo chown -R www-data:www-data .
