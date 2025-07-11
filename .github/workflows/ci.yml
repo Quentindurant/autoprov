@@ -18,17 +18,18 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             cd ${{ secrets.PROJECT_PATH }}
+            pwd
+            ls -l
             sudo git pull origin main
 
-            # Installation python/jinja2 si besoin (idempotent)
             if ! command -v python3 &> /dev/null; then
               sudo apt update
               sudo apt install -y python3 python3-pip
             fi
-            pip3 show jinja2 || sudo pip3 install jinja2
+            if ! python3 -c "import jinja2" 2>/dev/null; then
+              sudo pip3 install jinja2
+            fi
 
-            # Exécution du script de génération
             python3 generate_config.py
 
-            # (Optionnel) Fixer les droits pour www-data
             sudo chown -R www-data:www-data .
