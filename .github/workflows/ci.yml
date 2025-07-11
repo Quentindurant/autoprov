@@ -21,6 +21,8 @@ jobs:
             pwd
             ls -l
             sudo git config --global --add safe.directory $PWD
+            sudo git reset --hard HEAD
+            sudo git clean -fd
             sudo git pull origin main
 
             if ! command -v python3 &> /dev/null; then
