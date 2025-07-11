@@ -20,7 +20,7 @@ jobs:
             cd ${{ secrets.PROJECT_PATH }}
             pwd
             ls -l
-            git config --global --add safe.directory $PWD
+            sudo git config --global --add safe.directory $PWD
             sudo git pull origin main
 
             if ! command -v python3 &> /dev/null; then
