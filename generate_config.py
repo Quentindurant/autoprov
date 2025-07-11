@@ -39,7 +39,7 @@ account.1.sip_server.1.address = {sip_server}
     ini_filename = f"{mac.lower().replace(':', '')}_ini.cfg"
     with open(ini_filename, 'w', encoding='utf-8') as file:
         file.write(ini_content)
-    print(f"Fichier {ini_filename} généré avec succèsssssss ! (INI)")
+    print(f"Fichier {ini_filename} généré avec succèsssssss YAAAAAAAAAAAAAAA! (INI)")
 
 # Exemple corrigé avec tes valeurs
 generate_config(
