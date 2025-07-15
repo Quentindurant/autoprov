@@ -41,11 +41,15 @@ account.1.sip_server.1.address = {sip_server}
         file.write(ini_content)
     print(f"Fichier {ini_filename} généré avec succèsssssss YAAAAAAAAAAAAAAA! (INI)")
 
-    # Génération du .boot
-    boot_content = f"""
-include:{filename}
-include:{ini_filename}
-""".strip()
+    # Génération du .boot au format Yealink complet
+    boot_content = f"""#!version:1.0.0.1
+include:config <{filename}>
+include:config \"{filename}\"
+include:config <{ini_filename}>
+include:config \"{ini_filename}\"
+overwrite_mode = 1
+specific_model.excluded_mode=0
+"""
     boot_filename = f"{mac.lower().replace(':', '')}.boot"
     with open(boot_filename, 'w', encoding='utf-8') as file:
         file.write(boot_content)
