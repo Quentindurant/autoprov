@@ -41,6 +41,16 @@ account.1.sip_server.1.address = {sip_server}
         file.write(ini_content)
     print(f"Fichier {ini_filename} généré avec succèsssssss YAAAAAAAAAAAAAAA! (INI)")
 
+    # Génération du .boot
+    boot_content = f"""
+include:{filename}
+include:{ini_filename}
+""".strip()
+    boot_filename = f"{mac.lower().replace(':', '')}.boot"
+    with open(boot_filename, 'w', encoding='utf-8') as file:
+        file.write(boot_content)
+    print(f"Fichier {boot_filename} généré avec succès ! (.boot)")
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) == 6:
