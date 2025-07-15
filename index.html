@@ -51,7 +51,7 @@
             password: form.password.value,
             sip_server: form.sip_server.value
         };
-        const res = await fetch('generate.php', {
+        const res = await fetch('/generate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
