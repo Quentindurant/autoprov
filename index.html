@@ -14,51 +14,207 @@
         }
         button { margin-top: 24px; width: 100%; padding: 12px; background: #1976d2; color: #fff; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; transition: background 0.2s; }
         button:hover { background: #1565c0; }
-        .result { margin-top: 24px; background: #e3f2fd; padding: 12px; border-radius: 4px; color: #1976d2; text-align: center; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Générateur AutoProvision Yealink</h2>
-        <form id="provForm">
-            <label for="mac">MAC Address :</label>
-            <input type="text" id="mac" name="mac" maxlength="17" placeholder="44:DB:D2:E4:BE:98" required>
+<div class="container">
+    <h2 class="mb-4">Générateur AutoProvision Yealink</h2>
+    <form id="provisionForm">
+        <div class="row form-section">
+            <div class="col-md-4">
+                <label class="form-label">MAC Address</label>
+                <input type="text" class="form-control" name="mac" required placeholder="ex: 44:db:d2:c5:73:71">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Nom d'utilisateur (affiché)</label>
+                <input type="text" class="form-control" name="display_name" required>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Label (écran)</label>
+                <input type="text" class="form-control" name="label" required>
+            </div>
+        </div>
+        <div class="row form-section">
+            <div class="col-md-4">
+                <label class="form-label">User Name (SIP)</label>
+                <input type="text" class="form-control" name="user_name" required>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Auth Name (SIP)</label>
+                <input type="text" class="form-control" name="auth_name" required>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Mot de passe SIP</label>
+                <input type="text" class="form-control" name="password" required>
+            </div>
+        </div>
+        <div class="row form-section">
+            <div class="col-md-6">
+                <label class="form-label">Serveur SIP</label>
+                <input type="text" class="form-control" name="sip_server" required placeholder="ex: 141.94.251.137">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Port SIP</label>
+                <input type="number" class="form-control" name="sip_port" value="5060" required>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Langue</label>
+                <select class="form-select" name="lang_gui">
+                    <option value="French">Français</option>
+                    <option value="English">Anglais</option>
+                    <option value="German">Allemand</option>
+                </select>
+            </div>
+        </div>
+        <div class="row form-section">
+            <div class="col-md-4">
+                <label class="form-label">Mot de passe admin</label>
+                <input type="text" class="form-control" name="admin_password" value="UGCI8376" required>
+            </div>
+            <div class="col-md-8">
+                <label class="form-label">URL d'autoprovision</label>
+                <input type="text" class="form-control" name="autoprov_url" value="https://autoprov.quentindurant.com/" required>
+            </div>
+        </div>
+        <div class="form-section">
+            <h5>Touches écran (Line keys)</h5>
+            <div id="linekeys-container"></div>
+            <button type="button" class="btn btn-outline-primary btn-sm" onclick="addLinekey()">+ Ajouter une touche écran</button>
+        </div>
+        <div class="form-section">
+            <h5>Touches BLF</h5>
+            <div id="blfs-container"></div>
+            <button type="button" class="btn btn-outline-primary btn-sm" onclick="addBLF()">+ Ajouter une touche BLF</button>
+        </div>
+        <div class="row form-section">
+            <div class="col-md-4">
+                <label class="form-label">Fuseau horaire</label>
+                <input type="text" class="form-control" name="timezone" value="+1">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Nom du fuseau</label>
+                <input type="text" class="form-control" name="timezone_name" value="France(Paris)">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Mode logo écran</label>
+                <select class="form-select" name="logo_mode">
+                    <option value="0">Désactivé</option>
+                    <option value="1">Plein écran</option>
+                    <option value="2" selected>En coin</option>
+                </select>
+            </div>
+        </div>
+        <div class="row form-section">
+            <div class="col-md-4">
+                <label class="form-label">Mode casque</label>
+                <select class="form-select" name="headset_mode">
+                    <option value="1">Avancé (custom)</option>
+                    <option value="0">Standard</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Type de transfert</label>
+                <select class="form-select" name="transfer_type">
+                    <option value="1">Assisté (consulté)</option>
+                    <option value="0">Aveugle (immédiat)</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Générer la configuration</button>
+    </form>
 
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username" required>
+    <div id="feedback" class="mt-4"></div>
+    <div id="preview" style="display:none;"></div>
+</div>
 
-            <label for="extension">Extension :</label>
-            <input type="text" id="extension" name="extension" required>
+<script>
+function addLinekey() {
+    const c = document.getElementById('linekeys-container');
+    const idx = c.children.length + 1;
+    const row = document.createElement('div');
+    row.className = 'linekey-row';
+    row.innerHTML = `
+        <input type="text" placeholder="Label" name="linekey_label_${idx}" required>
+        <input type="number" placeholder="Ligne" name="linekey_line_${idx}" value="1" min="1">
+        <input type="number" placeholder="Valeur" name="linekey_value_${idx}" value="${idx}">
+        <span class="remove-btn" onclick="this.parentNode.remove()">&times;</span>
+    `;
+    c.appendChild(row);
+}
+function addBLF() {
+    const c = document.getElementById('blfs-container');
+    const idx = c.children.length + 1;
+    const row = document.createElement('div');
+    row.className = 'blf-row';
+    row.innerHTML = `
+        <input type="text" placeholder="Label" name="blf_label_${idx}" required>
+        <input type="number" placeholder="Ligne" name="blf_line_${idx}" value="1" min="1">
+        <input type="number" placeholder="Valeur" name="blf_value_${idx}">
+        <input type="text" placeholder="Extension" name="blf_extension_${idx}">
+        <span class="remove-btn" onclick="this.parentNode.remove()">&times;</span>
+    `;
+    c.appendChild(row);
+}
 
-            <label for="password">Mot de passe SIP :</label>
-            <input type="password" id="password" name="password" required>
+// Form submission
+const form = document.getElementById('provisionForm');
+form.onsubmit = async function(e) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
 
-            <label for="sip_server">Serveur SIP :</label>
-            <input type="text" id="sip_server" name="sip_server" required>
+    // Récupère dynamiquement les touches écran
+    data.linekeys = [];
+    document.querySelectorAll('#linekeys-container .linekey-row').forEach(row => {
+        const inputs = row.querySelectorAll('input');
+        data.linekeys.push({
+            label: inputs[0].value,
+            line: Number(inputs[1].value),
+            value: Number(inputs[2].value)
+        });
+    });
+    // Récupère dynamiquement les touches BLF
+    data.blfs = [];
+    document.querySelectorAll('#blfs-container .blf-row').forEach(row => {
+        const inputs = row.querySelectorAll('input');
+        data.blfs.push({
+            label: inputs[0].value,
+            line: Number(inputs[1].value),
+            value: inputs[2].value ? Number(inputs[2].value) : undefined,
+            extension: inputs[3].value
+        });
+    });
+    // Conversion des types
+    data.sip_port = Number(data.sip_port);
+    data.logo_mode = Number(data.logo_mode);
+    data.headset_mode = Number(data.headset_mode);
+    data.transfer_type = Number(data.transfer_type);
 
-            <button type="submit">Générer les fichiers</button>
-        </form>
-        <div class="result" id="result"></div>
-    </div>
-    <script>
-    document.getElementById('provForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const data = {
-            mac: form.mac.value,
-            username: form.username.value,
-            extension: form.extension.value,
-            password: form.password.value,
-            sip_server: form.sip_server.value
-        };
-        const res = await fetch('/generate', {
+    // Appel API
+    document.getElementById('feedback').innerHTML = 'Génération en cours...';
+    document.getElementById('preview').style.display = 'none';
+    try {
+        const resp = await fetch('/generate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         });
-        const msg = await res.text();
-        document.getElementById('result').textContent = msg;
-    });
-    </script>
+        const res = await resp.json();
+        if(res.success) {
+            document.getElementById('feedback').innerHTML = '<span class="text-success">Fichiers générés avec succès !</span>';
+            if(res.preview) {
+                document.getElementById('preview').style.display = 'block';
+                document.getElementById('preview').textContent = res.preview;
+            }
+            if(res.download_url) {
+                document.getElementById('feedback').innerHTML += `<br><a href="${res.download_url}" class="btn btn-success mt-2">Télécharger le .cfg</a>`;
+            }
+        } else {
+            document.getElementById('feedback').innerHTML = '<span class="text-danger">Erreur : '+res.error+'</span>';
+        }
+    } catch(err) {
+        document.getElementById('feedback').innerHTML = '<span class="text-danger">Erreur lors de la génération</span>';
+    }
+};
+</script>
 </body>
 </html>
