@@ -9,6 +9,7 @@ app = Flask(__name__)
 @app.route('/generate', methods=['POST'])
 def generate():
     data = request.get_json()
+    print("DEBUG DATA REÇU :", data)  # Ajout log debug
     # Validation basique (MAC obligatoire)
     if not data or 'mac' not in data:
         return jsonify({'success': False, 'error': 'MAC address requise'}), 400
@@ -18,7 +19,11 @@ def generate():
         cmd = [sys.executable, 'generate_config.py', json.dumps(data)]
         output = subprocess.check_output(cmd, stderr=subprocess.STDOUT, text=True)
     except subprocess.CalledProcessError as e:
+        print("ERREUR PYTHON :", e.output)  # Ajout log erreur
         return jsonify({'success': False, 'error': e.output}), 500
+    except Exception as e:
+        print("ERREUR INATTENDUE :", str(e))  # Ajout log erreur inattendue
+        return jsonify({'success': False, 'error': str(e)}), 500
 
     # Lecture du .cfg généré pour preview
     mac_clean = data['mac'].lower().replace(':', '')
