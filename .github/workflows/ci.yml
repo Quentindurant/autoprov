@@ -25,8 +25,8 @@ jobs:
             sudo git clean -fd
             sudo git pull origin main
 
-            sudo chmod -R 777 ./autoprov
-            
+            sudo chmod -R 777 ./autoprov.quentindurant.com
+
             if ! command -v python3 &> /dev/null; then
               sudo apt update
               sudo apt install -y python3 python3-pip
