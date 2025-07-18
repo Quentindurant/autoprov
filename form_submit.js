@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             auth_name: document.getElementById('auth_name').value.trim(),
             password: document.getElementById('password').value.trim(),
             sip_server: document.getElementById('sip_server').value.trim(),
-            sip_port: Number(document.getElementById('sip_port').value.trim()),
+            sip_port: document.getElementById('sip_port').value.trim(),
             lang_gui: document.getElementById('lang_gui') ? document.getElementById('lang_gui').value : 'French',
             lang_wui: document.getElementById('lang_wui') ? document.getElementById('lang_wui').value : 'French',
             admin_password: document.getElementById('admin_password') ? document.getElementById('admin_password').value : 'UGCI8376',
