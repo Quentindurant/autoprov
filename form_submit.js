@@ -31,6 +31,15 @@ document.addEventListener('DOMContentLoaded', function () {
             blfs: collectBLFs()
         };
 
+        // Validation stricte des champs obligatoires
+        const required = ['mac', 'label', 'display_name', 'user_name', 'auth_name', 'password', 'sip_server', 'sip_port'];
+        for (const key of required) {
+            if (!data[key] || data[key].trim() === "") {
+                alert("Le champ '" + key + "' est obligatoire et ne peut pas être vide.");
+                document.getElementById('feedback').innerHTML = '<span class="text-danger">Erreur : champ ' + key + ' manquant ou vide</span>';
+                return;
+            }
+        }
         // Debug : afficher le JSON envoyé
         console.log("DATA ENVOYÉ :", data);
 
