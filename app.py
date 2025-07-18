@@ -6,12 +6,17 @@ import json
 
 app = Flask(__name__)
 
+def log_debug(msg):
+    with open("debug_autoprov.log", "a", encoding="utf-8") as f:
+        f.write(msg + "\n")
+
 @app.route('/generate', methods=['POST'])
 def generate():
     data = request.get_json()
-    print("DEBUG DATA REÇU :", data)  # Ajout log debug
+    log_debug("DEBUG DATA REÇU : " + str(data))
     # Validation basique (MAC obligatoire)
     if not data or 'mac' not in data:
+        log_debug("ERREUR : MAC manquante")
         return jsonify({'success': False, 'error': 'MAC address requise'}), 400
 
     # Appel du script Python avec tous les paramètres en JSON
@@ -19,10 +24,10 @@ def generate():
         cmd = [sys.executable, 'generate_config.py', json.dumps(data)]
         output = subprocess.check_output(cmd, stderr=subprocess.STDOUT, text=True)
     except subprocess.CalledProcessError as e:
-        print("ERREUR PYTHON :", e.output)  # Ajout log erreur
+        log_debug("ERREUR PYTHON : " + e.output)
         return jsonify({'success': False, 'error': e.output}), 500
     except Exception as e:
-        print("ERREUR INATTENDUE :", str(e))  # Ajout log erreur inattendue
+        log_debug("ERREUR INATTENDUE : " + str(e))
         return jsonify({'success': False, 'error': str(e)}), 500
 
     # Lecture du .cfg généré pour preview
