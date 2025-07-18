@@ -9,13 +9,13 @@ def validate_param(name, value, required=True):
 
 def generate_ini_config(
     mac,
-    label,
-    display_name,
-    user_name,
-    auth_name,
-    password,
-    sip_server,
-    sip_port,
+    label=None,
+    display_name=None,
+    user_name=None,
+    auth_name=None,
+    password=None,
+    sip_server=None,
+    sip_port=None,
     lang_gui="French",
     lang_wui="French",
     admin_password="UGCI8376",
@@ -37,25 +37,18 @@ def generate_ini_config(
 
     # Validation de base
     validate_param("mac", mac)
-    validate_param("label", label)
-    validate_param("display_name", display_name)
-    validate_param("user_name", user_name)
-    validate_param("auth_name", auth_name)
-    validate_param("password", password)
-    validate_param("sip_server", sip_server)
-    validate_param("sip_port", sip_port)
 
     # Construction du contenu INI principal
     ini_lines = [
         '#!version:1.0.0.1',
         f'account.1.enable = 1',
-        f'account.1.label = {label}',
-        f'account.1.display_name = {display_name}',
-        f'account.1.user_name = {user_name}',
-        f'account.1.auth_name = {auth_name}',
-        f'account.1.password = {password}',
-        f'account.1.sip_server.1.address = {sip_server}',
-        f'account.1.sip_server.1.port = {sip_port}',
+        f'account.1.label = {label or ""}',
+        f'account.1.display_name = {display_name or ""}',
+        f'account.1.user_name = {user_name or ""}',
+        f'account.1.auth_name = {auth_name or ""}',
+        f'account.1.password = {password or ""}',
+        f'account.1.sip_server.1.address = {sip_server or ""}',
+        f'account.1.sip_server.1.port = {sip_port or ""}',
         f'lang.gui = {lang_gui}',
         f'lang.wui = {lang_wui}',
     ]
@@ -116,10 +109,19 @@ def generate_ini_config(
         f.write(boot_content)
     print(f"Fichier {boot_filename} généré avec succès ! (.boot)")
 
+
 if __name__ == "__main__":
     # Exemple d'appel CLI : python3 generate_config.py '{json}'
     if len(sys.argv) == 2:
         params = json.loads(sys.argv[1])
-        generate_ini_config(**params)
+        # Filtrage dynamique des paramètres reçus
+        import inspect
+        sig = inspect.signature(generate_ini_config)
+        filtered = {k: v for k, v in params.items() if k in sig.parameters}
+        try:
+            generate_ini_config(**filtered)
+        except Exception as e:
+            print("Erreur Python:", e)
+            raise
     else:
         print("Usage: python3 generate_config.py '{json_params}'")
