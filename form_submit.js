@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Collecte des champs principaux
         const data = {
-            mac: document.getElementById('mac').value.trim(),
+            mac: document.getElementById('mac').value.trim().toLowerCase(),
             label: document.getElementById('label').value.trim(),
             display_name: document.getElementById('display_name').value.trim(),
             user_name: document.getElementById('user_name').value.trim(),
