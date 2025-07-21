@@ -95,7 +95,7 @@ def generate_ini_config(
         'static.auto_provision.server.username = admin',
         f'static.auto_provision.server.password = {admin_password}',
         'static.auto_provision.repeat.enable = 1',
-        'static.auto_provision.repeat.minute = 0.5',
+        'static.auto_provision.repeat.minute = 1',
     ]
 
     # Écriture du .cfg
