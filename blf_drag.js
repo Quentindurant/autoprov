@@ -20,11 +20,15 @@ function makeDraggable(containerId, rowClass) {
     function handleDrop(e) {
         if (e.stopPropagation) e.stopPropagation();
         if (dragSrcEl !== this) {
-            this.parentNode.removeChild(dragSrcEl);
-            let dropHTML = e.dataTransfer.getData('text/html');
-            this.insertAdjacentHTML('beforebegin', dropHTML);
-            let dropElem = this.previousSibling;
-            addDnDEvents(dropElem);
+            // On échange les valeurs des inputs entre dragSrcEl et this
+            const srcInputs = dragSrcEl.querySelectorAll('input, select, textarea');
+            const dstInputs = this.querySelectorAll('input, select, textarea');
+            for (let i = 0; i < srcInputs.length; i++) {
+                // Sauvegarde temporaire
+                const tmp = srcInputs[i].value;
+                srcInputs[i].value = dstInputs[i].value;
+                dstInputs[i].value = tmp;
+            }
         }
         this.classList.remove('over');
         return false;
