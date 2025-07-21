@@ -1,0 +1,25 @@
+<!--
+Page de liste des téléphones enregistrés (MACs)
+Affiche toutes les MAC pour lesquelles un .cfg existe, avec lien vers édition.
+-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des téléphones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-4">
+    <h2>Liste des téléphones enregistrés</h2>
+    <ul class="list-group">
+      {% for mac in macs %}
+        <li class="list-group-item">
+          <a href="{{ url_for('edit_phone', mac=mac) }}">{{ mac }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <a href="/" class="btn btn-secondary mt-3">Retour à la génération</a>
+</div>
+</body>
+</html>

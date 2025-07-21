@@ -1,10 +1,11 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template, redirect, url_for
 import subprocess
 import sys
 import os
 import json
 
-app = Flask(__name__)
+# Flask doit pouvoir trouver les templates dans le dossier 'templates' à côté de ce script
+app = Flask(__name__, template_folder='templates')
 
 def log_debug(msg):
     with open("debug_autoprov.log", "a", encoding="utf-8") as f:
@@ -54,6 +55,46 @@ def generate():
 def download(filename):
     # Permet de télécharger le .cfg généré
     return send_from_directory(os.path.dirname(__file__), filename, as_attachment=True)
+
+# --- PAGE : Liste des téléphones enregistrés (MACs) ---
+@app.route('/phones')
+def list_phones():
+    """
+    Affiche la liste de toutes les MAC pour lesquelles un .cfg existe dans le dossier courant.
+    """
+    files = [f for f in os.listdir(os.path.dirname(__file__)) if f.endswith('.cfg')]
+    macs = [f.replace('.cfg', '') for f in files]
+    return render_template('phones.html', macs=macs)
+
+# --- PAGE : Edition d'une config de téléphone ---
+@app.route('/edit/<mac>', methods=['GET'])
+def edit_phone(mac):
+    """
+    Affiche un formulaire avec le contenu actuel du .cfg de la MAC (modifiable).
+    """
+    cfg_filename = f"{mac}.cfg"
+    cfg_path = os.path.join(os.path.dirname(__file__), cfg_filename)
+    cfg_content = ''
+    if os.path.exists(cfg_path):
+        with open(cfg_path, encoding='utf-8') as f:
+            cfg_content = f.read()
+    else:
+        cfg_content = '# Fichier inexistant, il sera créé à l\'enregistrement.'
+    return render_template('edit_phone.html', mac=mac, cfg_content=cfg_content, message=None)
+
+# --- ACTION : Mise à jour de la config d'un téléphone ---
+@app.route('/update/<mac>', methods=['POST'])
+def update_phone(mac):
+    """
+    Reçoit le contenu du formulaire, sauvegarde dans le .cfg correspondant, puis recharge la page.
+    """
+    cfg_filename = f"{mac}.cfg"
+    cfg_path = os.path.join(os.path.dirname(__file__), cfg_filename)
+    cfg_content = request.form.get('cfg_content', '')
+    with open(cfg_path, 'w', encoding='utf-8') as f:
+        f.write(cfg_content)
+    message = 'Configuration enregistrée avec succès !'
+    return render_template('edit_phone.html', mac=mac, cfg_content=cfg_content, message=message)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
